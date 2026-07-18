@@ -94,6 +94,8 @@ button { color: inherit; }
 }
 
 .brand-lockup { display: flex; align-items: center; gap: 8px; }
+.brand-link { color: inherit; text-decoration: none; cursor: pointer; }
+.brand-link:hover span:last-child { text-decoration: underline; text-underline-offset: 4px; }
 .brand-mark {
   display: grid;
   place-items: center;
@@ -187,7 +189,7 @@ h1 {
 
 .details { padding: 23px 20px 17px; }
 .detail-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font: 800 10px/1 var(--font-ui); letter-spacing: .08em; }
-.detail-title button { border: 0; padding: 7px 0 7px 12px; background: transparent; color: var(--cobalt); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.detail-title a { padding: 7px 0 7px 12px; color: var(--cobalt); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 dl { margin: 0; border-top: 1px solid var(--line); }
 dl > div { min-height: 39px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-size: 13px; }
 dt { color: var(--muted); }
@@ -208,33 +210,23 @@ footer {
 }
 footer span::before { content: "✓"; margin-right: 5px; color: var(--cobalt); font-weight: 900; }
 
-.sheet-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  display: grid;
-  align-items: end;
-  justify-items: center;
-  background: rgba(15, 15, 15, .54);
-  backdrop-filter: blur(4px);
-}
-
-.edit-sheet {
+.settings-page {
   width: min(100%, 430px);
-  max-height: 94svh;
-  overflow-y: auto;
+  min-height: 860px;
   background: var(--paper);
-  padding: 11px 20px calc(24px + env(safe-area-inset-bottom));
-  border-top: 5px solid var(--cobalt);
-  animation: sheet-up .25s ease-out;
+  border: 1px solid #bebbb2;
+  box-shadow: 0 24px 70px rgba(25, 24, 20, .14);
+  overflow: hidden;
 }
-@keyframes sheet-up { from { transform: translateY(35px); opacity: .5; } }
-.sheet-handle { width: 42px; height: 3px; margin: 0 auto 20px; background: var(--line); }
-.sheet-heading { display: flex; justify-content: space-between; align-items: start; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
-.sheet-heading p { margin-bottom: 7px; }
-.sheet-heading h2 { margin: 0; font-size: 29px; letter-spacing: -.05em; }
-.close-button { width: 38px; height: 38px; border: 1px solid var(--ink); background: transparent; font-size: 25px; line-height: 1; cursor: pointer; }
-form { padding-top: 18px; }
+.page-number { color: var(--cobalt); }
+.settings-hero { padding: 34px 20px 30px; border-bottom: 1px solid var(--ink); }
+.settings-hero h1 { margin-bottom: 20px; }
+.settings-hero > p:last-child { max-width: 280px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.settings-form { padding: 0; }
+.form-section { display: grid; grid-template-columns: 45px 1fr; border-bottom: 1px solid var(--line); }
+.form-index { padding: 21px 0 0 20px; color: var(--cobalt); font-size: 10px; font-weight: 800; }
+.form-body { min-width: 0; padding: 20px 20px 22px 0; }
+.first-group { margin-top: 0 !important; }
 form label > span, .time-group > p { display: block; margin: 0 0 7px; color: var(--muted); font-size: 11px; font-weight: 700; }
 .salary-field > div { display: flex; align-items: center; border-bottom: 2px solid var(--ink); }
 .salary-field input { width: 100%; border: 0; outline: 0; background: transparent; padding: 4px 0 8px; color: var(--ink); font: 800 29px/1 var(--font-ui); }
@@ -261,13 +253,15 @@ form label > span, .time-group > p { display: block; margin: 0 0 7px; color: var
 .formula-note { margin: 20px 0 16px; padding: 12px; border-left: 3px solid var(--cobalt); background: #f1f3fa; color: #53545b; font-size: 11px; line-height: 1.5; }
 .save-button { width: 100%; min-height: 56px; border: 0; background: var(--cobalt); color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; font-weight: 800; cursor: pointer; }
 .save-button span { font-size: 22px; }
+.save-button:disabled { cursor: not-allowed; opacity: .45; }
+.settings-actions { padding: 0 20px calc(24px + env(safe-area-inset-bottom)); }
 
 button:focus-visible, input:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
 
 @media (max-width: 520px) {
   html, body { background: var(--paper); }
   .app-shell { display: block; padding: 0; }
-  .payslip { width: 100%; min-height: 100svh; border: 0; box-shadow: none; }
+  .payslip, .settings-page { width: 100%; min-height: 100svh; border: 0; box-shadow: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
