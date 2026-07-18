@@ -213,6 +213,20 @@ form label > span, .time-group > p { display: block; margin: 0 0 7px; color: var
 .salary-field input { width: 100%; border: 0; outline: 0; background: transparent; padding: 4px 0 8px; color: var(--ink); font: 800 29px/1 var(--font-geist-mono), monospace; }
 .salary-field div span { font-weight: 800; }
 .time-group { margin-top: 20px; }
+.weekday-picker { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.weekday-picker button {
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.weekday-picker button.selected { border-color: var(--cobalt); background: var(--cobalt); color: white; }
+.weekday-picker button:nth-last-child(-n+2):not(.selected) { color: var(--red); }
+.field-error { margin: 7px 0 0; color: var(--red); font-size: 11px; font-weight: 700; }
 .time-pair { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 9px; }
 .time-pair i { padding-bottom: 15px; font-style: normal; }
 .time-pair label { min-width: 0; }
