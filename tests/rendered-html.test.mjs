@@ -36,3 +36,13 @@ test("renders original guide and trust content", async () => {
   assert.match(privacy, /localStorage/);
   assert.match(privacy, /Google 광고/);
 });
+
+test("renders the salary converter", async () => {
+  const response = await render("/salary-converter");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /연봉·월급·일급/);
+  assert.match(html, /CONVERSION RESULT/);
+  assert.match(html, /월 근무일/);
+  assert.match(html, /하루 실근무/);
+});

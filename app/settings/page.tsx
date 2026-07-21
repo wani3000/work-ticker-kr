@@ -103,6 +103,7 @@ export default function SettingsPage() {
             <p className="formula-note">급여 종류를 실제 근무시간으로 바꿔 초당 금액을 계산합니다. 세금·4대 보험·연장·야간·휴일근로 가산수당은 포함하지 않습니다.</p>
             <button className="save-button" type="submit" disabled={!ready || draft.workDays.length === 0 || draft.amount <= 0}>저장하고 카운터 보기 <span>↗</span></button>
             <Link className="text-link" href="/calculation">계산 기준 자세히 보기</Link>
+            <Link className="text-link" href="/salary-converter">연봉·월급·일급 먼저 환산하기</Link>
           </div>
         </form>
       </section>

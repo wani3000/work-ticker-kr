@@ -9,6 +9,7 @@ export default function SiteHeader({ compact = false }: { compact?: boolean }) {
       </Link>
       <nav aria-label="주요 메뉴">
         <Link href="/">카운터</Link>
+        <Link href="/salary-converter">연봉계산기</Link>
         <Link href="/guides">가이드</Link>
         <Link href="/about">소개</Link>
       </nav>

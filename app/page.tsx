@@ -118,6 +118,8 @@ export default function Home() {
           <Link className="text-link" href="/calculation">전체 계산 기준과 한계 보기 →</Link>
         </section>
 
+        <Link className="converter-banner" href="/salary-converter"><span><small>NEW TOOL</small><strong>연봉·월급·일급 계산기</strong></span><b>↗</b></Link>
+
         <footer className="ticker-footer"><span>로그인 없이</span><span>내 기기에만 저장</span><span>세전 단순 환산</span></footer>
       </section>
 

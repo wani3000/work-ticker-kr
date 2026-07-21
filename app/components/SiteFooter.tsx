@@ -9,6 +9,7 @@ export default function SiteFooter() {
       </div>
       <div className="footer-links">
         <Link href="/calculation">계산 기준</Link>
+        <Link href="/salary-converter">연봉계산기</Link>
         <Link href="/guides">근로 가이드</Link>
         <Link href="/faq">자주 묻는 질문</Link>
         <Link href="/sources">공식 출처</Link>
