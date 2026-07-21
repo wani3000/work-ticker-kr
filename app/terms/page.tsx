@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteFooter from "../components/SiteFooter";
+import SiteHeader from "../components/SiteHeader";
+
+export const metadata: Metadata = { title: "이용약관 및 면책 | WORK TICKER", description: "WORK TICKER의 이용 조건과 급여 계산 면책 안내." };
+
+export default function TermsPage() { return <main className="content-shell"><SiteHeader /><article className="article-page policy-page content-width"><header><p className="eyebrow">TERMS & DISCLAIMER</p><h1>이용약관 및 면책</h1><p className="article-summary">시행일 2026년 7월 21일</p></header><section><h2>1. 서비스 목적</h2><p>WORK TICKER는 사용자가 입력한 세전 급여와 근무시간을 바탕으로 시간당·초당 환산 금액을 보여주는 정보 도구입니다. 실제 급여 지급, 노무 관리 또는 법률·세무 자문을 제공하지 않습니다.</p></section><section><h2>2. 계산 결과의 한계</h2><p>결과에는 세금, 사회보험, 통상임금 판단, 주휴수당, 연장·야간·휴일근로수당과 개별 사업장의 임금 규정이 자동 반영되지 않습니다. 공휴일 데이터 역시 편의를 위한 달력 정보이며 개별 근로자의 유급휴일을 확정하지 않습니다.</p></section><section><h2>3. 사용자 책임</h2><p>사용자는 입력값과 결과를 스스로 확인해야 합니다. 임금 청구, 계약 체결, 신고 또는 법적 의사결정에는 원본 근로계약서·급여명세서·근태기록과 전문가 또는 관계기관의 확인을 이용해야 합니다.</p></section><section><h2>4. 서비스 변경</h2><p>정확성과 사용성을 높이기 위해 기능·공식·콘텐츠를 수정할 수 있습니다. 법령이나 공식 수치가 변경되면 확인 가능한 범위에서 업데이트하지만 실시간 반영을 보장하지 않습니다.</p></section><section><h2>5. 콘텐츠와 출처</h2><p>자체 설명문과 디자인의 저작권은 운영팀에 있습니다. 공식기관 자료는 해당 기관의 이용조건을 따르며 출처 링크를 제공합니다. 무단 복제보다 원문 링크와 서비스 공유를 권장합니다.</p></section><section><h2>6. 광고</h2><p>사이트에는 Google 등 제3자의 광고가 표시될 수 있습니다. 광고는 편집 콘텐츠와 명확히 구분하며 특정 광고 상품을 운영팀이 보증한다는 뜻이 아닙니다.</p></section><aside className="legal-notice"><strong>임금 문제가 있다면</strong><p>계산 결과에 의존하지 말고 고용노동부 고객상담센터 1350 또는 공인노무사·변호사 등 자격 있는 전문가에게 문의하세요.</p></aside><div className="article-actions"><Link href="/calculation">계산 기준 보기</Link><Link href="/contact">문의하기</Link></div></article><SiteFooter /></main>; }
